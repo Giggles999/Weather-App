@@ -81,8 +81,9 @@ searchForm.addEventListener("submit", handleSubmit);
 
 //clicking current button update temp real time base on location
 function searchLocation(position) {
-  
-  axios.get(apiUrl).then(displayWeatherCondition);
+    let apiKey = "6f65ac3695a44ef64022cd653378b553";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeatherCondition);
 }
 
 function getCurrentLocation(event) {
