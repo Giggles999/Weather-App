@@ -23,7 +23,7 @@ function formatDate(date) {
   let day = days[dayIndex];
 
   let monthIndex = date.getMonth();
-  let months = ["Januar", "Febuary", "March","April","May","June","July","August","September","October","November","December"];
+  let months = ["January", "Febuary", "March","April","May","June","July","August","September","October","November","December"];
   let month = months[monthIndex];
   let numberDay = date.getDate();
   let year = date.getFullYear();
@@ -78,13 +78,10 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-//default view when on page
-searchCity("Seattle");
 
 //clicking current button update temp real time base on location
 function searchLocation(position) {
-  let apiKey = "6f65ac3695a44ef64022cd653378b553";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
@@ -97,27 +94,22 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 
-// changing F and C with click
-function displayFahrenheit(event) {
+// changing F and C with click need to figure out how to replace 14 in line 101 with search
+
+function displayFahrenheit(event){
   event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(fahrenheitTemperature);
+  let fahrenheitTemperature = (14 * 9 ) / 5 + 32;
+  let tempatureElement = document.querySelector("#temperature");
+  tempatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-function displayCelsius(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-}
-
+let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsius);
+
+
+//default view when on page
+searchCity("Seattle");
+
