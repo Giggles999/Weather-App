@@ -40,7 +40,7 @@ function formatTime(time) {
 
 }
 
-// some reason my let time isn't displaying correctly
+// some reason my time isn't displaying correctly if I input let everything breaks...why is this?
 
 
 // display the current weather detail
