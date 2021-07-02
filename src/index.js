@@ -39,10 +39,7 @@ function formatTime(time) {
   return `${hours}:${minutes}`;
 }
 
-// some reason my let time isn't displaying correctly
-let timeElement = document.querySelector("#time");
-let currentTime = new time();
-timeElement.innerHTML = formatDate(currentTime);
+
 
 
 
