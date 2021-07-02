@@ -99,7 +99,7 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 
 function displayFahrenheit(event){
   event.preventDefault();
-  let fahrenheitTemperature = (14 * 9 ) / 5 + 32;
+  let fahrenheitTemperature = (14 * 9 / 5) + 32;
   let tempatureElement = document.querySelector("#temperature");
   tempatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
