@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>LM Final Project</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="src/styles.css" rel="stylesheet" type="text/css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -64,27 +64,29 @@
   <div class="result_search">
   <div class="row row-cols-2">
   <div class="col-6">
-    <h2 id="city">City name</h2>
+    <h2 id="city">Seattle</h2>
     <ul class="result"> 
-        <li id="date"> Todays Date </li>
+        <li id="date">Todays Date & Time</li>
         <li id="description">Weather Description</li>
-        <li id="icon"> <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloud icon"/> </li>
+      <img
+          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloud icon"/>
       </ul>
     </div>
 
   <div class="col-6">
-    <div class="clearfix weather-temperature">
-      <img src="" alt="Clear" id="icon" class="float-left" />
-      <div class="float-left">
-        <strong id="temperature"></strong>
-        <span class="units">
-          <a href="#" id="celsius-link" class="active">°C</a> |
-          <a href="#" id="fahrenheit-link">°F</a></span>
+        
+
+   <div class ="float-left", id="temp-change">
+     <span class="temperature" id="temperature">21</span
+       ><span class="units">
+                  <a href="#" id="celsius-link">°C</a> |
+                  <a href="#" id="fahrenheit-link">°F</a>
+                </span>
               </div>
         <br>
-        
-        <li>Humidity: <span id="humidity"></span> %</li>
-        <li>Wind: <span id="wind"></span> km/h</li>
+         <li id="precipitation">Precipitation: 2%</li>
+         <li>Humidity: <span id="humidity"></span> %</li>
+         <li>Wind: <span id="wind"></span> km/h</li>
       </div>
     </div>
   </div></div>
@@ -120,9 +122,8 @@
 
 <!--Foot detail-->
 <section class="footer">
-<footer> 
-  <a href="https://github.com/Giggles999/Weather-App"; target="_blank">  Open-Source Code</a> by Lynn Mach. </footer>
-
+  <footer> 
+    <a href="https://github.com/Giggles999/Weather-App"; target="_blank">  Open-Source Code</a> by Lynn Mach. </footer>
 
 </section>
 
@@ -132,3 +133,4 @@
 </script>
 </body>
 </html>
+
