@@ -193,7 +193,7 @@ ul {
   }
 }
 
-.daily-forecast,.units,.temperature,.footer {
+.forecast,.units,.temperature,.footer {
   color: #fff;
 }
 
@@ -204,7 +204,7 @@ ul {
   border-radius: 10px;
   max-width: 600px;
 }
-.forecastBox
+.forecast
 {
   position: absolute;
   left: 0;
