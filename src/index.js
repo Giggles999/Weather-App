@@ -37,10 +37,10 @@ function formatTime(time) {
     minutes = `0${minutes}`;
   }
   return `${hours}:${minutes}`;
+
 }
 
-
-
+// some reason my let time isn't displaying correctly
 
 
 // display the current weather detail
