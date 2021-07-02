@@ -51,9 +51,12 @@ function formatDate(timestamp) {
     "December"];
   let month = months[monthIndex];
   
-  
   return `${day} ${month} ${hours}:${minutes}${amOrPm}`;
 }
+
+let dateElement = document.querySelector("#date-time");
+dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
 
 // display the current weather detail
 function displayWeatherCondition(response) {
