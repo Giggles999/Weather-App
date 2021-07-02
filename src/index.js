@@ -61,9 +61,6 @@ function displayTemperature(response) {
   let conditionElement = document.querySelector("#condition");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind-speed");
-  let feelsLikeElement = document.querySelector("#feels-like");
-  let minTempElement = document.querySelector("#min-temp");
-  let maxTempElement = document.querySelector("#max-temp");
   let dateElement = document.querySelector("#date-time");
   let iconElement = document.querySelector("#icon");
 
@@ -74,9 +71,6 @@ function displayTemperature(response) {
   conditionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
-  minTempElement.innerHTML = Math.round(response.data.main.temp_min);
-  maxTempElement.innerHTML = Math.round(response.data.main.temp_max);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
