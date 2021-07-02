@@ -40,7 +40,8 @@ function formatTime(time) {
 }
 
 let timeElement = document.querySelector("#time");
-timeElement.innerHTML = formatDate(timeElement);
+let currentTime = new time();
+timeElement.innerHTML = formatDate(currentTime);
 // some reason my let time isn't displaying correctly
 
 
