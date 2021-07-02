@@ -39,10 +39,11 @@ function formatTime(time) {
   return `${hours}:${minutes}`;
 }
 
+// some reason my let time isn't displaying correctly
 let timeElement = document.querySelector("#time");
 let currentTime = new time();
 timeElement.innerHTML = formatDate(currentTime);
-// some reason my let time isn't displaying correctly
+
 
 
 // display the current weather detail
@@ -51,7 +52,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-  document.querySelector("#description").innerHTML = response.data.weather[0].main;
+  document.querySelector("#description").innerHTML = response.data.weather.main;
 
 
   celsiusTemperature = response.data.main.temp;
