@@ -32,7 +32,14 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}${amOrPm}`;
+  let monthIndex = date.getMonth();
+  let months = ["January", "Febuary", "March","April","May","June","July","August","September","October","November","December"];
+  let month = months[monthIndex];
+  let numberDay = date.getDate();
+  let year = date.getFullYear();
+
+
+  return `${day} ${month} ${numberDay} ${year} ${hours}:${minutes}${amOrPm}`;
 }
 
 function displayDailyForecast() {
