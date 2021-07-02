@@ -69,17 +69,18 @@
         <li id="date"> Todays Date </li>
         <li id="time"> Time here </li>
         <li id="description">Weather Description</li>
-        <li id="weather-img"> <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloud icon"/> </li>
+        <li id="icon"> <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloud icon"/> </li>
       </ul>
     </div>
 
   <div class="col-6">
-     <div class ="float-left", id="temp-change">
-     <span class="temperature" id="temperature"> </span
-       ><span class="units">
-            <a href="#" id="celsius-link">°C</a> |       
-            <a href="#" id="fahrenheit-link" class="active">°F</a>       
-            </span>
+    <div class="clearfix weather-temperature">
+      <img src="" alt="Clear" id="icon" class="float-left" />
+      <div class="float-left">
+        <strong id="temperature"></strong
+        ><span class="units"
+          ><a href="#" id="celsius-link" class="active">°C</a> |
+          <a href="#" id="fahrenheit-link">°F</a></span>
               </div>
         <br>
         <li>Humidity: <span id="humidity"></span> %</li>
