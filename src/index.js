@@ -8,18 +8,9 @@ menuToggle.addEventListener('click', () => {
 })
 
 //Current Date in Main box
+function formatDate(date) {
 
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
+  let dayIndex = date.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -27,20 +18,36 @@ function formatDate(timestamp) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday",
+    "Saturday"
   ];
-    let day = days[date.getDay()];
-    let year = date.getFullYear();
+  let day = days[dayIndex];
 
-    return `${day} ${year} ${hours}:${minutes}`;
+  let monthIndex = date.getMonth();
+  let months = ["January", "Febuary", "March","April","May","June","July","August","September","October","November","December"];
+  let month = months[monthIndex];
+  let numberDay = date.getDate();
+  let year = date.getFullYear();
+
+  return `${day} ${month} ${numberDay}, ${year}`;
 }
 
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let dateElement = document.querySelector("#date");
+let currentDate = new Date();
+dateElement.innerHTML = formatDate(currentDate);
 
-  return days[day];
+
+//Current Time in Main box
+function formatTime(time) {
+  let hours = time.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = time.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+
 }
 
 function displayForecast(response) {
