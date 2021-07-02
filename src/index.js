@@ -1,6 +1,29 @@
-function formatDate(date) {
+//Toggle Menu
+const menuToggle = document.querySelector('.toggle');
+const main = document.querySelector('.main');
 
-  let dayIndex = date.getDay();
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  main.classList.toggle('active');
+})
+
+
+//timestamp date & time
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let amOrPm = "AM";
+  if (hours >= 12) {
+    amOrPm = "PM";
+    hours = hours - 12;
+  }
+  if (hours === 0) {
+    hours = "12";
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   let days = [
     "Sunday",
     "Monday",
@@ -8,40 +31,29 @@ function formatDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
-  let day = days[dayIndex];
-
+  let day = days[date.getDay()];
+  
   let monthIndex = date.getMonth();
-  let months = ["January", "Febuary", "March","April","May","June","July","August","September","October","November","December"];
+  let months = [
+    "January", 
+    "Febuary", 
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"];
   let month = months[monthIndex];
-  let numberDay = date.getDate();
-  let year = date.getFullYear();
-
-  return `${day} ${month} ${numberDay}, ${year}`;
+  
+  
+  return `${day} ${month} ${hours}:${minutes}${amOrPm}`;
 }
-
-let dateElement = document.querySelector("#date");
-let currentDate = new Date();
-dateElement.innerHTML = formatDate(currentDate);
-
-
-//Current Time in Main box
-function formatTime(time) {
-  let hours = time.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = time.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${hours}:${minutes}`;
-
-}
-
-// some reason my time isn't displaying correctly if I input let everything breaks...why is this?
-
 
 // display the current weather detail
 function displayWeatherCondition(response) {
