@@ -244,5 +244,6 @@ ul {
 .footer,.text a {
   background: transparent;
   padding: 0px;
-  text-decoration: underline;
+  text-decoration: none;
+  cursor: pointer;
 }
