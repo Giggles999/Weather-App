@@ -241,14 +241,11 @@ ul {
   margin-bottom: 20px;
 }
 
-.footer,.text a {
+.footer,.text a:link, a:visited,a:active {
   background: transparent;
-  padding: 0px;
+  padding: 10px;
   text-decoration: none;
-  padding: 4px 4px 4px 4px ;  
+ 
 }
-.footer,.text a:hover {
-  cursor: pointer;
 
-}
 
