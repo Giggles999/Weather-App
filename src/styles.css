@@ -245,10 +245,10 @@ ul {
   background: transparent;
   padding: 0px;
   text-decoration: none;
-
+  
 }
 .footer,.text a:hover {
   cursor: pointer;
-
+  padding: 4px 4px 4px 4px ;
 }
 
