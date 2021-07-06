@@ -241,9 +241,9 @@ ul {
   margin-bottom: 20px;
 }
 
-.footer,.text a:link, a:visited,a:active {
+.footer,.text a:link, a:visited,a:active a:hover{
   background: transparent;
-  padding: 20px;
+  padding: 10px;
   text-decoration: none;
  
 }
