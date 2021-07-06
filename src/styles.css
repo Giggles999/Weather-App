@@ -229,7 +229,7 @@ ul {
 .footer
 {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   width: 50%;
   min-height: 50px;
   padding: 20px;
