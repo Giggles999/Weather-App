@@ -242,14 +242,13 @@ ul {
 }
 
 .footer,.text a {
-  display: block;
   background: transparent;
   padding: 0px;
   text-decoration: none;
 
 }
 .footer,.text a:hover {
-  cursor: pointer;;
+  cursor: pointer;
 
 }
 
