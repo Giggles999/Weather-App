@@ -226,7 +226,7 @@ ul {
 
 .footer
 {
-  position: absolute;
+  position: bottom;
   bottom: 0;
   width: 50%;
   min-height: 50px;
