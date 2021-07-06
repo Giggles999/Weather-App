@@ -18,11 +18,6 @@ header {
   align-items: center;
 }
 
-header .logo {
-  color: #fff;
-  text-transform: uppercase;
-}
-
 
 li {
   list-style: none;
@@ -33,7 +28,7 @@ li {
 
 ul {
   display: inline-block;
- margin: 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -65,7 +60,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #111;
+  background: transparent;
   transition: 0.5s;
   z-index: 2;
   color: #fff;
@@ -111,7 +106,6 @@ ul {
 }
 .text p {
   font-size: 1.1em;
-  color: #fff;
   margin: 20px 0;
   font-weight: 400;
   max-width: 700px;
@@ -120,7 +114,7 @@ ul {
   display: inline-block;
   font-size: 1em;
   background: #fff;
-  padding: 10px 30px;
+  padding: 10px ;
   text-decoration: none;
   font-weight: 500;
   margin-top: 10px;
@@ -214,9 +208,6 @@ ul {
   margin-bottom: 20px;
 }
 
-.footer,.text a:link, a:visited,a:active a:hover{
-  background: transparent;
 
-}
 
 
