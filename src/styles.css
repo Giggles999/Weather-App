@@ -226,19 +226,6 @@ ul {
   font-size: 13px;
 }
 
-.footer
-{
-  position: absolute;
-  bottom: 0px;
-  width: 50%;
-  min-height: 50px;
-  padding: 20px;
-  margin: 20px 20px;
-  display: flex;
-  align-items: center;
-  transition: 0.5s;
-  }
-
 .temperature {
   font-size: 64px;
   font-weight: 400;
