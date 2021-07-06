@@ -204,19 +204,23 @@ ul {
   border-radius: 10px;
   max-width: 600px;
 }
-.forecastBoxComebacktothisLater
+.weather-forecast
 {
-  position: absolute;
-  left: 0;
-  width: 50%;
-  min-height: 50px;
   padding: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background:red;
-  transition: 0.5s;
-  z-index: 2;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
 }
 
 .footer
