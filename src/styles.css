@@ -110,7 +110,7 @@ ul {
   font-weight: 400;
   max-width: 700px;
 }
-.text a ,a:active,a:hover,a:visited{
+.text a , a:active, a:hover, a:visited {
   display: inline-block;
   font-size: 1em;
   padding: 10px ;
@@ -119,6 +119,7 @@ ul {
   margin-top: 10px;
   letter-spacing: 2px;
   transition: 0.2s;
+  color: white
 }
 .text a:hover {
   letter-spacing: 6px;
