@@ -42,24 +42,30 @@ function formatDate(timestamp) {
   return `${day} ${month} ${numberDay} ${year} ${hours}:${minutes}${amOrPm}`;
 }
 
-function displayDailyForecast() {
-  let dailyForecastElement = document.querySelector("#daily-forecast");
-  dailyForecastElement.innerHTML = `
-    <div class="row">
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thur", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =  forecastHTML +
+        `
       <div class="col-2">
-        <div class="daily-forecast-date">Day 1</div>
+        <div class="weather-forecast-date">${day}</div>
         <img
-          src="https://openweathermap.org/img/wn/03d@2x.png"
-          alt="icon1"
-          width="60"
-         />
-        <div class="daily-forecast-temperature">
-          <span class="daily-forecast-temperature-max"> 22° </span> |
-          <span class="daily-forecast-temperature-min"> 14° </span>
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 27° </span>
         </div>
       </div>
-    </div>
   `;
+});
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function displayTemperature(response) {
@@ -73,6 +79,7 @@ function displayTemperature(response) {
 
   fahrenheitTemperature = response.data.main.temp;
 
+
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   conditionElement.innerHTML = response.data.weather[0].description;
@@ -83,7 +90,13 @@ function displayTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  
+
+
 }
+
+
+
 //search city
 function search(city) {
   let apiKey = "6f65ac3695a44ef64022cd653378b553";
@@ -144,11 +157,4 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 search("Seattle");
-displayDailyForecast();
-
-
-
-
-
-
-
+displayForecast("");
