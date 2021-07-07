@@ -42,7 +42,8 @@ function formatDate(timestamp) {
   return `${day} ${month} ${numberDay} ${year} ${hours}:${minutes}${amOrPm}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Thur", "Fri", "Sat"];
@@ -68,6 +69,15 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "6f65ac3695a44ef64022cd653378b553";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#location-city");
@@ -91,7 +101,7 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   
-
+    getForecast(response.data.coord);
 
 }
 
@@ -157,4 +167,4 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 search("Seattle");
-displayForecast("");
+
