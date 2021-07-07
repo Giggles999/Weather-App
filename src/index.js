@@ -66,7 +66,6 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#location-city");
   let conditionElement = document.querySelector("#condition");
-  let feelsElement = document.querySelector("#feels-like");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind-speed");
   let dateElement = document.querySelector("#date-time");
@@ -77,7 +76,6 @@ function displayTemperature(response) {
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   conditionElement.innerHTML = response.data.weather[0].description;
-  feelsElement.innerHTML = response.data.main.feels-like;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
